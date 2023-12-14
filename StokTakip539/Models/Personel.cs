@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace StokTakip539.Models
 {
     [Table("Personeller ")]
-    internal class Personel
+    public class Personel
     {
         [Key]
         public int Id { get; set; }

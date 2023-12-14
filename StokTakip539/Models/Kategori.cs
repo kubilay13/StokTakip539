@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 namespace StokTakip539.Models
 {
     [Table("Kategoriler")]
-    internal class Kategori
+    public class Kategori
     {
         [Key]
         public int Id { get; set; }
         [Required]
         [MaxLength( 45)]
         public string KategoriAdi { get; set; }
+        public virtual ICollection<Ürün> Ürünler { get; set; } = new HashSet<Ürün>();
     }
 }

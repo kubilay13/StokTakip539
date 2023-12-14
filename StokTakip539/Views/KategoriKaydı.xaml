@@ -31,6 +31,10 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <DataGrid x:Name="DbKategori" MinHeight="100" Grid.Row="1"></DataGrid>
+        <DataGrid x:Name="DbKategori" MinHeight="100" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kategori Adı:" Binding="{Binding KategoriAdi}" Width="*" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

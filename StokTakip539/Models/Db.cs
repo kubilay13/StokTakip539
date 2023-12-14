@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Models
 {
-    internal class Db
+    public static class Db
     {
         public static AppDbContext Context;
         public static void Initialize()

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StokTakip539.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace StokTakip.Models
 
         public DbSet<Satış> Satışlar { get; set; }
 
-        public DbSet<SatışDetay> Satışdetayları { get; set; }
+        public DbSet<SatışDetayı> Satışdetayları { get; set; }
 
         public DbSet<Tedarikci> Tedarikciler { get; set; }
         public DbSet<Ürün> Ürünler { get; set; }

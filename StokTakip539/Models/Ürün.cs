@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace StokTakip539.Models
 {
     [Table("Ürün")]
-    internal class Ürün
+    public class Ürün
     {
         [Key]
         public int Id { get; set; }
@@ -18,6 +18,7 @@ namespace StokTakip539.Models
         public string ÜrünAdı { get; set; }
         [ForeignKey(nameof(Kategori))]
         [Required]
+        public int KategoriId { get; set; }
         public virtual Kategori Kategori { get; set; }
         [ForeignKey(nameof(Tedarikci))]
         public int TedarikciId { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace StokTakip539.Models
 {
     [Table("SatışDetayları")]
-    internal class SatışDetayı
+    public class SatışDetayı
     {
         [Key]
         public int Id { get; set; }
@@ -19,12 +19,12 @@ namespace StokTakip539.Models
         [ForeignKey(nameof(Ürün))]
         [Required]
         public int ÜrünId { get; set; }
-        public virtual ürün Ürün { get; set; }
+        public virtual Ürün Ürün { get; set; }
         [Required]
         public int Miktar { get; set; }
         [Required]
         public int Fiyat { get; set; }
-
+        public virtual ICollection<SatışDetayı> SatışDetayları { get; set; } = new HashSet<SatışDetayı>();
 
     }
 }

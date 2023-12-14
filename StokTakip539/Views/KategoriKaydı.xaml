@@ -5,21 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StokTakip539.Views"
         mc:Ignorable="d"
-        Title="Kategori Kaydı" Width="500" SizeToContent="Height" ResizeMode="NoResize">
+        Title="Kategori Kaydı" Width="500" SizeToContent="Height">
     <Grid>
-        <GroupBox Header="Bilgi Gİrişi" Margin="20">
-            <StackPanel>
-                <Button HorizontalAlignment="Right" Margin="0,10,10,10" Padding="20 ,5">Yeni Kayıt</Button>
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Bilgi Gİrişi" Margin="25,10,0,10" Padding="5" Width="450" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+
+            <StackPanel VerticalAlignment="Center">
+
+                <Button x:Name="BtnYeniKayıt" Content="Yeni Kayıt" HorizontalAlignment="Right" Width="80" Height="25"></Button>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
                     <TextBlock Margin="0 ,0 ,10, 0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">Kategori Adı:</TextBlock>
-                    <TextBox Width="200" Height="25" ></TextBox>
+                    <TextBox x:Name="TbKategoriAdı" Width="200" Margin="10,0,0,0" ></TextBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10">
-                    <Button Width="70" Padding="20 ,5">Ekle</Button>
-                    <Button Width="70" Padding="20 ,5" Margin="10,0">Sil</Button>
-                    <Button Width="70">Güncelle</Button>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="BtnEkle" Width="80" Height="25">Ekle</Button>
+                    <Button x:Name="BtnSil" Width="80" Height="25" Margin="10,0,0,0">Sil</Button>
+                    <Button  x:Name="BtnGüncelle" Width="80" Height="25" Margin="10,0,0,0">Güncelle</Button>
                 </StackPanel>
             </StackPanel>
         </GroupBox>
+        <DataGrid x:Name="DbKategori" MinHeight="100" Grid.Row="1"></DataGrid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StokTakip539.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace StokTakip539
         public MainWindow()
         {
             InitializeComponent();
+            KategoriKaydı win = new();
+            win.Show();
+            
         }
     }
 }

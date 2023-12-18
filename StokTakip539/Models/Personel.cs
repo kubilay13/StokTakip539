@@ -43,9 +43,9 @@ namespace StokTakip539.Models
 
         [ForeignKey(nameof(Yetki))]
         [Required]
-        public string YetkiId { get; set; }
+        public int YetkiId { get; set; }
         public virtual Yetki Yetki { get; set; }
-        public ICollection<Satış> Satışlar { get; set; } = new HashSet<Satış>();
+        public virtual ICollection<Satış> Satışlar { get; set; } = new HashSet<Satış>();
 
 
     }

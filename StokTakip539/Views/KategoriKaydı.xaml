@@ -25,13 +25,13 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="BtnEkle" Width="80" Height="25">Ekle</Button>
+                    <Button x:Name="BtnEkle" Width="80" Height="25" Click="BtnEkle_Click">Ekle</Button>
                     <Button x:Name="BtnSil" Width="80" Height="25" Margin="10,0,0,0">Sil</Button>
                     <Button  x:Name="BtnGüncelle" Width="80" Height="25" Margin="10,0,0,0">Güncelle</Button>
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <DataGrid x:Name="DbKategori" MinHeight="100" Grid.Row="1">
+        <DataGrid x:Name="DbKategori" MinHeight="100" Grid.Row="1" SelectionChanged="DbKategori_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Kategori Adı:" Binding="{Binding KategoriAdi}" Width="*" ></DataGridTextColumn>
             </DataGrid.Columns>

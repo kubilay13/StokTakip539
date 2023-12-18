@@ -25,7 +25,7 @@ namespace StokTakip539.Models
         public DateTime İşlemZamanı { get; set; }
         [MaxLength(255)]
         public string Açıklama { get; set; }
-        public ICollection<SatışDetayı> SatışDetayları { get; set; } = new HashSet<SatışDetayı>();
+        public virtual ICollection<SatışDetayı> SatışDetayları { get; set; } = new HashSet<SatışDetayı>();
 
 
     }

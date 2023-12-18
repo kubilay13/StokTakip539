@@ -23,5 +23,10 @@ namespace StokTakip539.Views
         {
             InitializeComponent();
         }
+
+        private void BtnEkle_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

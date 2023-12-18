@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace StokTakip539.Models
 {
     [Table("SatışDetayları")]
-    public class SatışDetayı
+    public  class SatışDetayı
     {
         [Key]
         public int Id { get; set; }
@@ -24,7 +24,7 @@ namespace StokTakip539.Models
         public int Miktar { get; set; }
         [Required]
         public int Fiyat { get; set; }
-        public virtual ICollection<SatışDetayı> SatışDetayları { get; set; } = new HashSet<SatışDetayı>();
+        //public virtual ICollection<SatışDetayı> SatışDetayları { get; set; } = new HashSet<SatışDetayı>();
 
     }
 }

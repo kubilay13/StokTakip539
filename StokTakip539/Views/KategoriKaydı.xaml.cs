@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StokTakip.Models;
+using StokTakip539.Models;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace StokTakip539.Views
 {
+
     /// <summary>
     /// KategoriKaydı.xaml etkileşim mantığı
     /// </summary>
@@ -25,6 +17,23 @@ namespace StokTakip539.Views
         }
 
         private void BtnEkle_Click(object sender, RoutedEventArgs e)
+        {   
+            AppDbContext _db = new AppDbContext();
+            var a = TbKategoriAdı.Text;
+            Kategori kategori = new Kategori()
+            {
+                KategoriAdi = a,
+            };
+            _db.Kategoriler.Add(kategori);
+            _db.SaveChanges();
+        }
+
+        private void DbKategori_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TbKategoriAdı_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

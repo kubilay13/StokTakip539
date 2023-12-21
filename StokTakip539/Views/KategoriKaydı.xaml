@@ -26,8 +26,8 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="BtnEkle" Width="80" Height="25" Click="BtnEkle_Click">Ekle</Button>
-                    <Button x:Name="BtnSil" Width="80" Height="25" Margin="10,0,0,0">Sil</Button>
-                    <Button  x:Name="BtnGüncelle" Width="80" Height="25" Margin="10,0,0,0">Güncelle</Button>
+                    <Button x:Name="BtnSil" Width="80" Height="25" Margin="10,0,0,0" Click="BtnSil_Click">Sil</Button>
+                    <Button  x:Name="BtnGüncelle" Width="80" Height="25" Margin="10,0,0,0" Click="BtnGüncelle_Click">Güncelle</Button>
                 </StackPanel>
             </StackPanel>
         </GroupBox>

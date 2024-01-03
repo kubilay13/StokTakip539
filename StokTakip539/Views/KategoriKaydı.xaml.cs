@@ -87,5 +87,26 @@ namespace StokTakip539.Views
         {
 
         }
+
+        private void BtnHepsiniSil_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var kategoriler = Db.Context.Kategoriler.ToList();
+                foreach (var item in kategoriler)
+                {
+                    Db.Context.Kategoriler.Remove(item);
+                    Db.Context.SaveChanges();
+                   
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Silme İşlemi Başarısız.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            MessageBox.Show("Kategorilerin hepsi silindi", "Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
+            Listele();
+        }
     }
 }

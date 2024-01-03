@@ -64,7 +64,23 @@ namespace StokTakip539.Views
 
         private void BtnSil_Click(object sender, RoutedEventArgs e)
         {
-           
+
+
+            try
+            {
+                Kategori selectedCategory = DbKategori.SelectedItem as Kategori;
+
+                Db.Context.Kategoriler.Remove(selectedCategory);
+                Db.Context.SaveChanges();
+                MessageBox.Show("Silme İşlemi Başarılı.", "Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+              
+                MessageBox.Show("Silme İşlemi Başarısız.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            Listele();
+
         }
 
         private void BtnGüncelle_Click(object sender, RoutedEventArgs e)

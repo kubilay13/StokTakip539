@@ -27,7 +27,7 @@ namespace StokTakip539.Views
 
         private void BtnEkle_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(TbKategoriAdı.Text)) //Eğer kullanıcı kategori adını boş bırkaırsa
+            if (string.IsNullOrWhiteSpace(TbKategoriAdı.Text)) //Eğer kullanıcı kategori adını boş bırkaırsa
             {
                 MessageBox.Show("Lütfen Boş Bırakmayınız.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -41,15 +41,15 @@ namespace StokTakip539.Views
                 Db.Context.Kategoriler.Add(kategori);
                 Db.Context.SaveChanges();
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Db.Context.Kategoriler.Add(kategori);
-                MessageBox.Show("Kayıt Yapılırken Hata Oluştu.","Hata",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Kayıt Yapılırken Hata Oluştu.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             Listele();
 
-            
-            
+
+
         }
 
         private void DbKategori_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -76,7 +76,7 @@ namespace StokTakip539.Views
             }
             catch (Exception ex)
             {
-              
+
                 MessageBox.Show("Silme İşlemi Başarısız.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             Listele();
@@ -85,7 +85,20 @@ namespace StokTakip539.Views
 
         private void BtnGüncelle_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Kategori selectedCategory = DbKategori.SelectedItem as Kategori;
+                Kategori kategorix = new Kategori();
+                kategorix.KategoriAdi = selectedCategory.KategoriAdi;
+                Db.Context.SaveChanges();
+                MessageBox.Show("Güncelleme İşlemi Başarılı.", "Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show("Güncelleme İşlemi Başarısız.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            Listele();
         }
 
         private void BtnHepsiniSil_Click(object sender, RoutedEventArgs e)
@@ -97,7 +110,7 @@ namespace StokTakip539.Views
                 {
                     Db.Context.Kategoriler.Remove(item);
                     Db.Context.SaveChanges();
-                   
+
                 }
             }
             catch (Exception)
